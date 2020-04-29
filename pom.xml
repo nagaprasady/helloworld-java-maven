@@ -42,6 +42,23 @@
 	  </plugins>
 	</build>
 	
+<plugin>
+    <groupId>org.apache.maven.plugins</groupId>
+    <artifactId>maven-install-plugin</artifactId>
+    <executions>
+        <execution>
+            <id>Add-2-local-repository</id>
+            <phase>package</phase>
+            <configuration>
+                <packaging>jar</packaging>
+                <file>${project.build.directory}\${artifactId}-${version}.jar</file>
+            </configuration>
+            <goals>
+                <goal>install-file</goal>
+            </goals>
+        </execution>
+    </executions>
+</plugin>
 <distributionManagement>
     <repository>
         <id>sym</id>
@@ -54,11 +71,4 @@
         <url>http://15.206.166.202:8081/repository/all/</url>
     </snapshotRepository>
 </distributionManagement>
-
-
-
-
-
-
-
 </project>
