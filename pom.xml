@@ -7,7 +7,7 @@
   <version>5.0.0</version>
   <name>my-maven</name>
   <url>http://maven.apache.org</url>
-	
+
 
 <properties>
   <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -38,9 +38,23 @@
 				</execution>
 			</executions>
 		</plugin>
-	</plugins>
+	
+	  </plugins>
+<plugin>
+    <groupId>org.apache.maven.plugins</groupId>
+    <artifactId>maven-jar-plugin</artifactId>
+    <executions>
+        <execution>
+            <id>make-a-jar</id>
+            <phase>compile</phase>
+            <goals>
+                <goal>jar</goal>
+            </goals>
+        </execution>
+    </executions>
+</plugin>
 	</build>
-  
+	
 <distributionManagement>
     <repository>
         <id>sym</id>
